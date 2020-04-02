@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/empisland/static/css/main.1ed581a2.chunk.css",
+    "main.js": "/empisland/static/js/main.dfd93a04.chunk.js",
+    "main.js.map": "/empisland/static/js/main.dfd93a04.chunk.js.map",
+    "runtime-main.js": "/empisland/static/js/runtime-main.e655b042.js",
+    "runtime-main.js.map": "/empisland/static/js/runtime-main.e655b042.js.map",
+    "static/js/2.b9c7a752.chunk.js": "/empisland/static/js/2.b9c7a752.chunk.js",
+    "static/js/2.b9c7a752.chunk.js.map": "/empisland/static/js/2.b9c7a752.chunk.js.map",
+    "index.html": "/empisland/index.html",
+    "precache-manifest.cefea483cebe592b57ccb3a90428ebf9.js": "/empisland/precache-manifest.cefea483cebe592b57ccb3a90428ebf9.js",
+    "service-worker.js": "/empisland/service-worker.js",
+    "static/css/main.1ed581a2.chunk.css.map": "/empisland/static/css/main.1ed581a2.chunk.css.map",
+    "static/js/2.b9c7a752.chunk.js.LICENSE.txt": "/empisland/static/js/2.b9c7a752.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/empisland/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e655b042.js",
+    "static/js/2.b9c7a752.chunk.js",
+    "static/css/main.1ed581a2.chunk.css",
+    "static/js/main.dfd93a04.chunk.js"
+  ]
+}
