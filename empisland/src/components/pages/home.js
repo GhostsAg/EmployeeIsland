@@ -17,7 +17,7 @@ class Home extends React.Component {
 
         this.setState({ newEmployees });
 
-        // fs.writeFileSync("../../employees.json", JSON.stringify(allEmployees, null, 2), (err) => {
+        // fs.writeFileSync("../../employees.json", JSON.stringify(newEmployees, null, 2), (err) => {
         //     if (err) throw err;
         // });
     }
@@ -28,7 +28,7 @@ class Home extends React.Component {
                 <Title>All Employees</Title>
                 {this.state.allEmployees.map(emp => (
                     <EmpCard 
-                        removeEmp = {this.removeEmployee}
+                        removeEmployee = {this.removeEmployee}
                         id = {emp.id}
                         key = {emp.id}
                         name = {emp.firstName + " " + emp.lastName}
