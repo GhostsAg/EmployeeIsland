@@ -1,7 +1,7 @@
 import React from 'react';
 import Wrapper from "../wrapper";
 import Title from "../title";
-import empFile from "../../employees.json";
+import allEmployees from "../../employees.json";
 import EmpCard from "../EmpCard";
 
 const fs = require("fs");
@@ -9,24 +9,24 @@ const fs = require("fs");
 class Home extends React.Component {
 
     state = {
-        empFile
+        allEmployees
     };
 
     removeEmployee = id => {
-        const employees = this.state.empFile.filter(emp => emp.id !== id);
+        const newEmployees = this.state.allEmployees.filter(emp => emp.id !== id);
 
-        this.setState({ employees });
+        this.setState({ newEmployees });
 
-        fs.writeFileSync("../../employees.json", JSON.stringify(employees, null, 2), (err) => {
-            if (err) throw err;
-        });
+        // fs.writeFileSync("../../employees.json", JSON.stringify(allEmployees, null, 2), (err) => {
+        //     if (err) throw err;
+        // });
     }
 
     render() {
         return (
             <Wrapper>
                 <Title>All Employees</Title>
-                {this.state.empFile.map(emp => (
+                {this.state.allEmployees.map(emp => (
                     <EmpCard 
                         removeEmp = {this.removeEmployee}
                         id = {emp.id}
