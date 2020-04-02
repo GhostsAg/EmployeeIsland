@@ -6,7 +6,7 @@ function EmpCard(props) {
     return (
         <div className="card">
             <div className="img-container">
-                <img alt={props.name} src={props.image} />
+                <img alt={props.image[0].title} className="img-fluid" src={props.image[0].images.original.url} />
             </div>
             <div className="content">
                 <ul>

@@ -7,6 +7,7 @@ class EmpForm extends React.Component {
     state = {
         firstName: "",
         lastName: "",
+        image: [],
         email: "",
         role: "",
         department: ""
@@ -20,11 +21,23 @@ class EmpForm extends React.Component {
         });
     }
 
+    searchGiphy = query => {
+        API.search(query)
+        .then(res => this.setState({ image: res.data.data }))
+        .catch(err => console.log(err));
+    };
+
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
+
+        this.searchGiphy(this.state.image);
+
         let data = this.state;
-        fs.writeFileSync("../employee.json", JSON.stringify(data, null, 2), (err) => {
+        let empArr = fs.readFileSync("../employee.json", "utf-8", (emps) => {
+            return JSON.parse(emps);
+        });
+
+        fs.writeFileSync("../employee.json", JSON.stringify(empArr.push(data), null, 2), (err) => {
             if (err) throw err;
             alert("Employee inserted: " + this.state.firstName + " " + this.state.lastName + ".");
         });
@@ -32,6 +45,7 @@ class EmpForm extends React.Component {
         this.setState({
             firstName: "",
             lastName: "",
+            image: "",
             email: "",
             role: "",
             department: ""
@@ -49,6 +63,12 @@ class EmpForm extends React.Component {
                     <div class="input-field col s6">
                         <input name="lastName" id="last_name" type="text" class="validate" onChange={this.handleChange} value={this.state.lastName} />
                         <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="image" id="image" type="text" class="validate" onChange={this.handleChange} value={this.state.image} />
+                        <label for="image">Who does he look like.</label>
                     </div>
                 </div>
                 <div class="row">
